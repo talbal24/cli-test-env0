@@ -1,0 +1,77 @@
+==> git:clone
+checking out "https://github.com/talbal24/cli-test-env0" at ref "main"
+> git clone 'https://github.com/talbal24/cli-test-env0' /tmp/4931b7c9-b3da-452c-954c-92a39e9d5e3b '--depth=1' --single-branch --branch main
+Cloning into '/tmp/4931b7c9-b3da-452c-954c-92a39e9d5e3b'...
+
+> git -C /tmp/4931b7c9-b3da-452c-954c-92a39e9d5e3b fetch --prune --no-recurse-submodules '--depth=1' origin main
+From https://github.com/talbal24/cli-test-env0
+ * branch            main       -> FETCH_HEAD
+
+> git -C /tmp/4931b7c9-b3da-452c-954c-92a39e9d5e3b checkout FETCH_HEAD --
+Note: switching to 'FETCH_HEAD'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at c224f81 Add simple random_pet Terraform resource
+
+> (cd /tmp/4931b7c9-b3da-452c-954c-92a39e9d5e3b; git submodule update --depth=1 --init --recursive --jobs 2)
+> git -C /tmp/4931b7c9-b3da-452c-954c-92a39e9d5e3b rev-parse HEAD
+c224f81b95f5bc36b4994c0142e9286251edb656
+
+working with revision id "c224f81b95f5bc36b4994c0142e9286251edb656"
+==> state:get
+Retrieving state file...
+No previous state found
+==> spec:load
+Deploy Spec file was not found
+==> set:vars
+reading Terraform Variables...
+Terraform Variables: 
+	ENV0_INSTALLED_TOOLS=aws, Gcloud
+reading Environment Variables...
+Environment Variables: 
+	ENV0_DATADOG_API_KEY=*************
+	ENV0_DATADOG_HOST=lambda-intake.logs.us5.datadoghq.com
+	ENV0_DATADOG_PORT=443
+	ENV0_DEPLOYER_EMAIL=tal.ballgobeen@env0.com
+	ENV0_DEPLOYER_NAME=Tal Ballgobeen
+	ENV0_DEPLOYER_USER_ID=google-oauth2|101596005548001125315
+	ENV0_DEPLOYMENT_LOG_ID=08b7b56a-e932-4a69-af61-86e4ee273302
+	ENV0_DEPLOYMENT_REVISION=main
+	ENV0_DEPLOYMENT_TYPE=deploy
+	ENV0_ENVIRONMENT_CREATOR_EMAIL=tal.ballgobeen@env0.com
+	ENV0_ENVIRONMENT_CREATOR_NAME=Tal Ballgobeen
+	ENV0_ENVIRONMENT_CREATOR_USER_ID=google-oauth2|101596005548001125315
+	ENV0_ENVIRONMENT_ID=4931b7c9-b3da-452c-954c-92a39e9d5e3b
+	ENV0_ENVIRONMENT_NAME=cli test env0
+	ENV0_OIDC_TOKEN=*************
+	ENV0_ORGANIZATION_ID=bde19c6d-d0dc-4b11-a951-8f43fe49db92
+	ENV0_PARENT_PROJECT_IDS=
+	ENV0_PARENT_PROJECT_PATH=cli test tal
+	ENV0_PROJECT_ID=8cb6731e-b409-49a5-943d-03abb2f71b29
+	ENV0_PROJECT_NAME=cli test tal
+	ENV0_ROOT_DIR=/tmp/4931b7c9-b3da-452c-954c-92a39e9d5e3b
+	ENV0_STEP_NAME=set:vars:before
+	ENV0_STEP_STATUS=NOT_STARTED
+	ENV0_TEMPLATE_DIR=/tmp/4931b7c9-b3da-452c-954c-92a39e9d5e3b/.env0workdir
+	ENV0_TEMPLATE_ID=55149e2f-4eb5-4674-b88e-f875db407563
+	ENV0_TEMPLATE_NAME=single-use-template-for-cli test env0
+	ENV0_TEMPLATE_REPOSITORY=https://github.com/talbal24/cli-test-env0
+	ENV0_TEMPLATE_REVISION=main
+	ENV0_WORKSPACE_NAME=env04931b7
+	INFRACOST_API_KEY=*************
+==> set:version
+Failed to install terraform: No matching version found in mirror for terraform pattern: min-required
